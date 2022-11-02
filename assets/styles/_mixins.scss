@@ -31,6 +31,22 @@
   }
 }
 
+@mixin h1 {
+  @include font(rem(40px), 100%, -0.05em, 700);
+
+  @include media-1024 {
+    @include font(rem(30px), 100%, -0.05em, 700);
+  }
+
+  @include media-768 {
+    @include font(rem(20px), 100%, -0.05em, 700);
+  }
+
+  @include media-414 {
+    @include font(rem(56px), 100%, -0.05em, 700, $font-title);
+  }
+}
+
 @mixin color($name, $color) {
   .bg-#{$name} {
     background: $color !important; /* stylelint-disable-line declaration-no-important */
