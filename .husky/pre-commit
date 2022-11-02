@@ -1,0 +1,15 @@
+#!/bin/sh
+yarn run lint:js
+
+status=$?
+if [ $status -ne 0 ]; then
+  exit 1
+fi
+
+yarn run lint:style
+
+status=$?
+if [ $status -ne 0 ]; then
+  exit 1
+fi
+

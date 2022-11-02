@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+const fsPromises = require('fs').promises;
+const path = require('path');
+
+fsPromises.readFile(path.join(__dirname, '..', '/.git/COMMIT_EDITMSG'), 'utf8').then((message) => {
+    if (!/[0-9]+: .+/.test(message)) {
+        console.error(message, 'неверный формат коммита {{номер}}: {{описание}}')
+        process.exit(1)
+    }
+})

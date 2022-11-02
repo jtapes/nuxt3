@@ -1,0 +1,16 @@
+node_modules
+.idea
+*.log
+.nuxt
+.env
+nuxt.d.ts
+.output
+.vscode
+coverage
+public/sprite/*
+public/log
+public/sitemap.xml
+public/robots.txt
+svg-sprite.json
+.DS_Store
+package-lock.json

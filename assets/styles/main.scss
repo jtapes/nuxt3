@@ -1,0 +1,182 @@
+@use "sass:map";
+@import "mixins";
+@import "fonts";
+@import "grid";
+
+// @import "animations";
+// @import "typography";
+
+// сначала подключаем все утилиты, такие как цвета, классы размеров и базовые классы
+
+@include color("black", $color-black);
+@include color("main", $color-main);
+@include color("blue", $color-blue);
+@include color("error", $color-error);
+@include color("gray", $color-gray);
+@include color("white", $color-white);
+@include color("el", $color-el);
+@include sizes-classes;
+@include project-classes;
+
+@each $breakpoint, $value in $breakpoints {
+  @media (max-width: $value - 0.5px) {
+    @include sizes-classes("-#{$breakpoint}");
+    @include project-classes("-#{$breakpoint}");
+  }
+}
+
+.us-t {
+  user-select: text;
+}
+
+.tt-u {
+  text-transform: uppercase;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($color-main, 0.5);
+}
+
+.oy-a {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::selection {
+  color: $color-white;
+  background: $color-main;
+}
+
+html {
+  @include font;
+
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* stylelint-disable */
+#__nuxt {
+  height: 100%;
+  & > div {
+    height: 100%;
+  }
+}
+/* stylelint-enable */
+
+body {
+  margin: 0 auto;
+  height: 100%;
+  min-width: 920px;
+  min-height: 100%;
+  max-width: map.get($breakpoints, 19);
+  font-family: $font;
+
+  /* сглаживание для шрифта */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $font-size-defult;
+  color: $color-white;
+
+  /* устанавлиывает цвет активонго элемента, чтобы не выделять активные элементы на touch устройств */
+  -webkit-tap-highlight-color: transparent;
+  background-color: $color-black;
+
+  @include media-768 {
+    padding-top: 76px;
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  margin: 0;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+input,
+button,
+textarea {
+  @include font;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+.b {
+  font-weight: 600;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  fill: currentcolor;
+}
+
+.icon-16 {
+  width: $size-16;
+  height: $size-16;
+}
+
+.icon-24 {
+  width: $size-24;
+  height: $size-24;
+}
+
+.icon-32 {
+  width: $size-32;
+  height: $size-32;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: $color-main;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.#{$custom}-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 $size-48;
+  width: 100%;
+  max-width: map.get($breakpoints, 7) !important;
+
+  @include media-768 {
+    padding: 0 $size-20;
+  }
+}
+
+.ox-h {
+  overflow-x: hidden;
+}

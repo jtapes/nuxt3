@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+const fsPromises = require('fs').promises;
+const path = require('path');
+
+fsPromises.readFile(path.join(__dirname, '..', '/.git/HEAD'), 'utf8').then((message) => {
+    const branch = message.replace(/.+heads\/(.+)/, '$1')
+    if (!(/^(fix|feature|docs|refactor|style|perf|test|chore)\/[0-9]+_.+/.test(branch) || /master/.test(branch) || /merge|Merge/.test(branch))) {
+        console.error(branch, /master/.test(branch), 'неверный формат ветки {{тип}}/{{номер}}_{{описание}}')
+        console.log(`
+            возможные типы  \n
+            * \`fix\`: исправление ошибки (bug) в коде (он соответствует PATCH в SemVer)
+            * \`feature\`: добавление нового функционала (feature) (он соответствует MINOR в SemVer)
+            * \`docs\`: изменения в документации
+            * \`style\`: изменения в коде, не затрагивающие его содержание (форматирование, добавление точек с запятой и т.д.)
+            * \`refactor\`: правки кода без изменения функциональности
+            * \`perf\`: изменения в коде, улучшающие производительность
+            * \`test\`: добавление новых тестов или исправление существующих
+            * \`chore\`: любые другие изменения, не затрагивающие код (правки скриптов деплоя и т.п.)
+        `)
+        process.exit(1)
+    }
+})

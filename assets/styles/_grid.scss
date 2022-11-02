@@ -1,0 +1,45 @@
+@use "sass:math";
+@import "variables";
+
+$columns-count: 12;
+$gutter: 10px;
+
+$width: math.div(100%, $columns-count);
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gutter;
+
+  @include media-1024 {
+    gap: 8px;
+  }
+}
+
+@mixin grid($breakpoint: "", $columns: $columns-count) {
+  $prefix: if($breakpoint == "", "", "-");
+
+  @for $i from 0 through $columns {
+    .col#{$prefix}#{$breakpoint}-#{$i} {
+      width: calc(#{$width * $i} - #{if($i == 12, 0px, $gutter)});
+
+      @include media-1024 {
+        width: calc(#{$width * $i} - #{if($i == 12, 0px, 8px)});
+      }
+    }
+  }
+
+  @for $i from 0 through $columns {
+    .off#{$prefix}#{$breakpoint}-#{$i} {
+      margin-left: calc(#{$width * $i});
+    }
+  }
+}
+
+@include grid;
+
+@each $breakpoint, $value  in $breakpoints {
+  @media (max-width: $value - 0.5px) {
+    @include grid($breakpoint);
+  }
+}

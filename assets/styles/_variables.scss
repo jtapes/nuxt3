@@ -1,0 +1,83 @@
+@use "sass:map";
+
+$color-main: #20e302;
+$color-blue: #1088ff;
+$color-el: #14334f;
+
+$color-black: #001926;
+$color-white: #fff;
+$color-error: #ff5f49;
+$color-gray: #878787;
+
+$breakpoints: (
+  10: 920px,
+  7: 768px,
+  4: 414px,
+);
+
+$sizes: (
+  0: 0,
+  4: 4px,
+  8: 8px,
+  12: 12px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+  36: 36px,
+  40: 40px,
+  44: 44px,
+  48: 48px,
+  52: 52px,
+  56: 56px,
+  60: 60px,
+  64: 64px,
+  68: 68px,
+);
+
+$size-2: 2px;
+$size-4: map.get($sizes, 4);
+$size-8: map.get($sizes, 8);
+$size-12: map.get($sizes, 12);
+$size-16: map.get($sizes, 16);
+$size-20: map.get($sizes, 20);
+$size-24: map.get($sizes, 24);
+$size-28: map.get($sizes, 28);
+$size-32: map.get($sizes, 32);
+$size-36: map.get($sizes, 36);
+$size-40: map.get($sizes, 40);
+$size-44: map.get($sizes, 44);
+$size-48: map.get($sizes, 48);
+$size-52: 52px;
+$size-56: 56px;
+$size-60: 60px;
+$size-64: 64px;
+$size-68: 68px;
+$size-72: 72px;
+$size-76: 76px;
+$size-80: 80px;
+$size-84: 84px;
+$size-88: 88px;
+$size-96: 96px;
+$size-100: 100px;
+$size-120: 120px;
+$size-140: 140px;
+$size-160: 160px;
+
+$z-index: (
+  header: 20,
+  menu: 40,
+  modal: 50,
+  default: 1,
+);
+
+$font: "Nunito", sans-serif;
+$font-size-defult: $size-20;
+
+// $radius-block: $size-8;
+// $radius-element: $size-8;
+// $border-element: $size-4;
+// $show-block: 0 0 $size-40 rgba($color-element, 0.1);
+$animate-time: 0.3s;
+$custom: "p"; // префикс для кастомных классов
