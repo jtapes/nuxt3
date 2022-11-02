@@ -1,7 +1,6 @@
+import { Either } from '@sweet-monads/either'
 import { ErrorEntity } from '~/domains/ErrorEntity'
 
 export interface TestLoad {
-  load(): Promise<
-    ErrorEntity | { phone: string; spam: boolean; date: string }[]
-  >
+  load(): Promise<Either<ErrorEntity, { name: string }>>
 }
