@@ -3,6 +3,6 @@ import { z } from 'zod'
 
 export const HomeSchema = z.object({
   // seo: SeoSchema,
-  name: z.string(),
+  nameTest: z.string(),
 })
 export type HomeSchemaType = z.infer<typeof HomeSchema>
