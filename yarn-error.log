@@ -1,0 +1,83 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;;C:\Users\vlad\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet\;C:\Program Files (x86)\Antelope Audio\Antelope Launcher\;C:\Program Files\WireGuard\;C:\Users\vlad\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PhpStorm 2021.3.2\bin;;C:\Users\vlad\AppData\Roaming\npm;C:\Users\vlad\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\vlad\AppData\Local\Programs\Microsoft VS Code\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.7.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\host\nuxt3\package.json: Unexpected token } in JSON at position 1441
+      at JSON.parse (<anonymous>)
+      at C:\Users\vlad\AppData\Roaming\nvm\v18.7.0\node_modules\yarn\lib\cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\vlad\AppData\Roaming\nvm\v18.7.0\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\vlad\AppData\Roaming\nvm\v18.7.0\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "private": true,
+    "scripts": {
+      "dev": "nuxi dev -p 80",
+      "build": "nuxi build",
+      "start-local": "cross-env PORT=80 nuxi start",
+      "start": " node ./application/ci-cd.js && cross-env PORT=80 nuxi start",
+      "lint:js": "eslint {**/*,*}.{js,ts,vue}",
+      "lint:js:fix": "eslint {**/*,*}.{js,ts,vue} --fix",
+      "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
+      "test": "jest --collect-coverage --forceExit --detectOpenHandles --testPathIgnorePatterns=./application/api.test.ts",
+      "test:integration": "jest --testNamePattern=api",
+      "prepare": "husky install"
+    },
+    "devDependencies": {
+      "@babel/core": "7.19.6",
+      "@babel/preset-env": "7.19.4",
+      "babel-core": "6.26.3",
+      "cross-env": "7.0.3",
+      "dotenv": "16.0.3",
+      "eslint": "8.22.0",
+      "@typescript-eslint/parser": "5.33.1",
+      "@nuxtjs/eslint-config-typescript": "11.0.0",
+      "@nuxtjs/eslint-module": "3.1.0",
+      "eslint-config-prettier": "8.5.0",
+      "eslint-plugin-nuxt": "3.2.0",
+      "eslint-plugin-prettier": "4.2.1",
+      "eslint-plugin-vue": "8.7.1",
+      "postcss": "8.4.18",
+      "postcss-html": "1.5.0",
+      "postcss-loader": "7.0.1",
+      "postcss-scss": "4.0.5",
+      "prettier": "2.7.1",
+      "stylelint": "14.14.0",
+      "stylelint-scss": "4.3.0",
+      "stylelint-config-html": "1.1.0",
+      "stylelint-config-standard": "29.0.0",
+      "stylelint-config-standard-scss": "6.0.0",
+      "stylelint-order": "5.0.0",
+    },
+    "dependencies": {
+      "nuxt": "3.0.0-rc.12",
+      "@sweet-monads/either": "3.1.0",
+      "cross-fetch": "3.1.5",
+      "husky": "8.0.1",
+      "sass": "1.55.0",
+      "sass-loader": "13.1.0",
+      "smoothscroll-polyfill": "0.4.4",
+      "typescript": "4.8.4",
+      "zod": "3.19.1",
+      "date-fns": "2.29.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

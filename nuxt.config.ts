@@ -28,10 +28,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    chromium: process.env.PUPPETEER_EXECUTABLE_PATH,
-    mongoConnect: 'mongodb://0.0.0.0:27017/phone',
+    // chromium: process.env.PUPPETEER_EXECUTABLE_PATH,
     public: {
-      BASE_URL: process.env.BASE_URL || '',
+      // BASE_URL: process.env.BASE_URL || '',
     },
   },
 })

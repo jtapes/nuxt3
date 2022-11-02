@@ -1,6 +1,5 @@
 node_modules
 .idea
-*.log
 .nuxt
 .env
 nuxt.d.ts
@@ -8,7 +7,6 @@ nuxt.d.ts
 .vscode
 coverage
 public/sprite/*
-public/log
 public/sitemap.xml
 public/robots.txt
 svg-sprite.json

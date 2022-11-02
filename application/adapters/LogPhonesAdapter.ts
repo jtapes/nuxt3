@@ -1,8 +1,8 @@
 import { right, left } from '@sweet-monads/either'
 import { ErrorEntity } from '~/domains/ErrorEntity'
-import { LogPhonesLoad } from '~/domains/LogPhonesLoad'
+import { TestLoad } from '~/domains/LogPhonesLoad'
 
-export class LogPhonesAdapter implements LogPhonesLoad {
+export class LogPhonesAdapter implements TestLoad {
   async load() {
     const apiUrl = `/api/log-phones`
 
