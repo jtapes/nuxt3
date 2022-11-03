@@ -28,6 +28,7 @@ module.exports = {
   rules: {
     // customSyntax: "sugarss",
     // "order/order": ["custom-properties", "declarations"],
+    // 'scss/double-slash-comment-whitespace-inside': 'never',
     'selector-class-pattern': null,
     'order/properties-order': [
       [

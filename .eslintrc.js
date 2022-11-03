@@ -14,16 +14,15 @@ module.exports = {
   //   sourceType: 'module',
   // },
   extends: [
-    // 'plugin:vue/vue3-recommended',
-    // 'plugin:prettier/recommended',
-
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended',
     'plugin:prettier/recommended',
+    // 'plugin:vue/vue3-recommended',
   ],
   rules: {
     // 'vue/no-unused-vars': 'error',
     // 'no-undef': 'off',
+    'import/named': 'off',
     'vue/no-v-html': 'off',
     'no-async-promise-executor': 'off',
     'no-useless-constructor': 'off',
